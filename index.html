@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Public+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    try { var t = localStorage.getItem('ft-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-name">Finance Tracker</div>
+        <div class="brand-sub">Your monthly money plan</div>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#/dashboard" data-route="dashboard"><span class="nav-ico">◧</span>Dashboard</a>
+        <a href="#/budget" data-route="budget"><span class="nav-ico">◎</span>Budget</a>
+        <a href="#/transactions" data-route="transactions"><span class="nav-ico">≡</span>Transactions</a>
+        <a href="#/reports" data-route="reports"><span class="nav-ico">▤</span>Reports</a>
+        <a href="#/accounts" data-route="accounts"><span class="nav-ico">▣</span>Accounts</a>
+        <a href="#/import" data-route="import"><span class="nav-ico">⇪</span>Import</a>
+        <a href="#/settings" data-route="settings"><span class="nav-ico">⚙</span>Settings</a>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="btn-ghost-side" id="themeToggle" type="button">◐ Theme</button>
+        <div class="privacy-note">Your data stays in this browser on this computer.</div>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu">☰</button>
+        <h1 id="pageTitle">Dashboard</h1>
+        <div class="topbar-actions" id="topbarActions"></div>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/categories.js"></script>
+  <script src="js/parsers.js"></script>
+  <script src="js/categorize.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/budget.js"></script>
+  <script src="js/views/transactions.js"></script>
+  <script src="js/views/reports.js"></script>
+  <script src="js/views/accounts.js"></script>
+  <script src="js/views/import.js"></script>
+  <script src="js/views/settings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
